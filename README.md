@@ -76,7 +76,13 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 
 ### Dataset
-
+|Title|link|
+|:---:|:--:|
+|한국어 혐오 데이터셋|https://github.com/kocohub/korean-hate-speech|
+|일베·오늘의 유머 사이트의 욕설 데이터셋|https://github.com/2runo/Curse-detection-data|
+|디시인사이드·네이트판 등에서 수집한 욕설 데이터| - |
+|나무위키 한국어 욕설 정보|https://namu.wiki/w/%EC%9A%95%EC%84%A4/%ED%95%9C%EA%B5%AD%EC%96%B4|
+|직접 제작한 불용어 사전| - |
 ### Reference
 
 
