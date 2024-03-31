@@ -41,12 +41,12 @@
 
 ### Contents Table
 
-- [프로젝트 개요](https://www.notion.so/ReadMe-582eb35ade15428ebb836d24256dcd66?pvs=21)
-- [기대 효과](https://www.notion.so/ReadMe-582eb35ade15428ebb836d24256dcd66?pvs=21)
-- [프로젝트 설명](https://www.notion.so/ReadMe-582eb35ade15428ebb836d24256dcd66?pvs=21)
-- [모델 설명](https://www.notion.so/ReadMe-582eb35ade15428ebb836d24256dcd66?pvs=21)
-- [Dataset](https://www.notion.so/ReadMe-582eb35ade15428ebb836d24256dcd66?pvs=21)
-- [Reference](https://www.notion.so/ReadMe-582eb35ade15428ebb836d24256dcd66?pvs=21)
+- [프로젝트 개요](#📝-프로젝트-개요)
+- [기대 효과](#🛎️-기대-효과)
+- [프로젝트 설명](#프로젝트-설명)
+- [모델 설명](#모델-설명)
+- [Dataset](#dataset)
+- [Reference](#reference)
 
 ---
 
@@ -77,6 +77,7 @@
     
 
 ### 프로젝트 설명
+<br>
 
 ![alt text](img/flow.png)
 
@@ -90,12 +91,16 @@
   <img src="img/data1.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
-- 불용어 제거 및 형태소 분리
+<br>
 
+
+- 불용어 제거 및 형태소 분리
 
 <div style="display: flex; justify-content: center;">
   <img src="img/data2.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
+
+<br>
 
 - 형태소 별 초성·중성·종성 분리
     - 댓글 일부분은 “ㅅㅂ”, “ㅄ” 등 초성으로만 이루어진 비속어가 존재합니다. 따라서, 단어가 아닌 자모단위로 분석하기 위해 한국어를 초성·중성·종성으로 분리하였습니다.
@@ -103,6 +108,13 @@
 <div style="display: flex; justify-content: center;">
   <img src="img/data3.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
+
+<br>
+
+-------
+
+<br>
+
 
 **[모델 개발]**
 
@@ -118,7 +130,15 @@
   <img src="img/model2.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
+<br>
+
+-----
+
+<br>
+
 **[모델 비교]**
+
+<br>
 
 1. **LSTM v1** 
 
@@ -156,6 +176,8 @@
 
 ---
 
+<br>
+
 **[성능 비교]  Accuracy / Loss** 
 
 ![alt text](img/graph.png)
@@ -163,6 +185,7 @@
 ---
 
 ### 모델 설명
+
 
 1. **FastText**
 
@@ -190,3 +213,9 @@ FastText를 사용한 이유는 다음과 같습니다.
 | 직접 제작한 불용어 사전 | - |
 
 ### Reference
+
+| Reference | Git | paper_link |
+| --- | --- | --- |
+| Swear Word Detection Method Using The Word Embedding and LSTM |  | https://oak.chosun.ac.kr/bitstream/2020.oak/16586/2/%EB%8B%A8%EC%96%B4%20%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B3%BC%20LSTM%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%B9%84%EC%86%8D%EC%96%B4%20%ED%8C%90%EB%B3%84%20%EB%B0%A9%EB%B2%95.pdf |
+| FastText:Library for efficient text classification and representation learning | https://github.com/facebookresearch/fastText | https://fasttext.cc/ |
+| The Unreasonable Effectiveness of Recurrent Neural Networks | https://github.com/karpathy/char-rnn | https://karpathy.github.io/2015/05/21/rnn-effectiveness/ |
