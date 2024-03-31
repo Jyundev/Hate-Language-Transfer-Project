@@ -54,7 +54,10 @@
 
 ![alt text](img/hate.png)
 
-*이강인(23·파리 생제르맹)에 대해 커뮤니티에 달린 비난 댓글*
+<div style="text-align: center; font-size: 10px; font-style : italic; ">
+이강인(23·파리 생제르맹)에 대해 커뮤니티에 달린 비난 댓글</div>
+
+<br>
 
 최근 아시안컵에서의 결과에 대해 선수들과 감독에게 지나친 비난이 발생한 일이 있었습니다. 댓글 문제에 대응하기 위해 네이버와 카카오는 2004년 댓글 서비스를 시작한 이후 댓글 개수 제한, 댓글 이력 공개, 댓글 어뷰징 방지 시스템 도입, AI 기반 필터링 적용 및 고도화, 그리고 연예·스포츠 뉴스 댓글 폐지 등 다양한 방식으로 노력하고 있지만, 이러한 노력들이 근본적인 해결책이 되지 못하고 있습니다.
 
@@ -87,7 +90,7 @@
 - 데이터 별 욕설 여부 라벨링
 - 한글·공 외 영어 및 특수문자 제거
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; text-align: center;">
   <img src="img/data1.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
@@ -96,7 +99,7 @@
 
 - 불용어 제거 및 형태소 분리
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; text-align: center;">
   <img src="img/data2.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
@@ -105,7 +108,7 @@
 - 형태소 별 초성·중성·종성 분리
     - 댓글 일부분은 “ㅅㅂ”, “ㅄ” 등 초성으로만 이루어진 비속어가 존재합니다. 따라서, 단어가 아닌 자모단위로 분석하기 위해 한국어를 초성·중성·종성으로 분리하였습니다.
     
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; text-align: center;">
   <img src="img/data3.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
@@ -120,13 +123,13 @@
 
 - 한글의 형태적인 정보를 학습하여, n-gram(n=5) 단어 단위로 임베딩 할 수 있는 FastText모델 생성
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; text-align: center;">
   <img src="img/model1.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
 - 벡터화된 수치 데이터를 사용하여 비속어 여부를 학습하고 예측하기 위한 LSTM 모델을 수립
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; text-align: center;">
   <img src="img/model2.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
@@ -190,8 +193,11 @@
 1. **FastText**
 
 FastText는 Facebook에서 개발한 기술로, 단어를 n-gram의 하위 단어 집합으로 학습하고, 이들을 결합하여 단어의 전체 임베딩을 생성합니다.
+<div style = "text-align: center;">
+  <img src="img/fasetext.png" alt="Alt text" style="width: 80%; margin: 5px;">
+</div>
 
-![alt text](img/fasetext.png)
+<br>
 
 FastText를 사용한 이유는 다음과 같습니다.
 
