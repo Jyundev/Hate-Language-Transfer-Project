@@ -89,22 +89,7 @@
 
 - 데이터 별 욕설 여부 라벨링
 - 한글·공 외 영어 및 특수문자 제거
-
-<div style="display: flex; justify-content: center; text-align: center;">
-  <img src="img/data1.png" alt="Alt text" style="width: 80%; margin: 5px;">
-</div>
-
-<br>
-
-
 - 불용어 제거 및 형태소 분리
-
-<div style="display: flex; justify-content: center; text-align: center;">
-  <img src="img/data2.png" alt="Alt text" style="width: 80%; margin: 5px;">
-</div>
-
-<br>
-
 - 형태소 별 초성·중성·종성 분리
     - 댓글 일부분은 “ㅅㅂ”, “ㅄ” 등 초성으로만 이루어진 비속어가 존재합니다. 따라서, 단어가 아닌 자모단위로 분석하기 위해 한국어를 초성·중성·종성으로 분리하였습니다.
     
@@ -122,11 +107,6 @@
 **[모델 개발]**
 
 - 한글의 형태적인 정보를 학습하여, n-gram(n=5) 단어 단위로 임베딩 할 수 있는 FastText모델 생성
-
-<div style="display: flex; justify-content: center; text-align: center;">
-  <img src="img/model1.png" alt="Alt text" style="width: 80%; margin: 5px;">
-</div>
-
 - 벡터화된 수치 데이터를 사용하여 비속어 여부를 학습하고 예측하기 위한 LSTM 모델을 수립
 
 <div style="display: flex; justify-content: center; text-align: center;">
@@ -143,39 +123,34 @@
 
 <br>
 
-1. **LSTM v1** 
-
-| Layer (type) | Output Shape | Param # |
-| --- | --- | --- |
-| lstm_52 (LSTM) | (None, 24, 64) | 42240 |
-| lstm_53 (LSTM) | (None, 32) | 12416 |
-| dense_33 (Dense) | (None, 16) | 528 |
-| dropout_19 (Dropout) | (None, 16) | 0 |
-| dense_34 (Dense) | (None, 1) | 17 |
-- 총 5개의 레이어로 구성됨
-- 드롭아웃을 적용하여 과적합 방지
+**1. LSTM v1** 
+- **두 개의 LSTM 레이어**
+    - 첫 번째 LSTM 레이어: 입력 시퀀스를 받아들여 64차원의 출력 생성
+    - 두 번째 LSTM 레이어: 이전 LSTM 레이어의 출력을 받아들여 32차원의 출력 생성
+- **두 개의 Dense 레이어:**
+    - 첫 번째 Dense 레이어: 16차원의 출력 생성
+    - 두 번째 Dense 레이어: 단일 유닛의 출력 생성
+- **드롭아웃 레이어**
+    - 드롭아웃을 적용하여 과적합 방지
 
 ---
 
-1. **LSTM v2** 
-- 총 6개의 레이어로 구성됨
-    - LSTM v1 모델과 비교하여 LSTM 레이어 추가
-- 드롭아웃을 적용하여 과적합 방지
+**2. LSTM v2** 
+- **세 개의 LSTM 레이어**
+    - LSTM v1 모델과 비교하여 하나의 LSTM 레이어 추가
 
 ---
 
-1. **GRU (기존 LSTM 모델을 간소화한 버전)**
-
-| Layer (type) | Output Shape | Param # |
-| --- | --- | --- |
-| gru_15 (GRU) | (None, 24, 64) | 31,872 |
-| gru_16 (GRU) | (None, 24, 32) | 9,408 |
-| gru_17 (GRU) | (None, 16) | 2,400 |
-| dense_37 (Dense) | (None, 16) | 272 |
-| dropout_21 (Dropout) | (None, 16) | 0 |
-| dense_38 (Dense) | (None, 1) | 17 |
-- 총 6개의 레이어로 구성됨
-- 드롭아웃을 적용하여 과적합 방지
+**3. GRU (기존 LSTM 모델을 간소화한 버전)**
+- **세 개의 GRU 레이어**
+    - 첫 번째 GRU 레이어: 입력 시퀀스를 받아들여 64차원의 출력 생성
+    - 두 번째 GRU 레이어: 이전 GRU 레이어의 출력을 받아들여 32차원의 출력 생성
+    - 세 번째 GRU 레이어: 이전 GRU 레이어의 출력을 받아들여 16차원의 출력 생성
+- **두 개의 Dense 레이어:**
+    - 첫 번째 Dense 레이어: 16차원의 출력 생성
+    - 두 번째 Dense 레이어: 단일 유닛의 출력 생성
+- **드롭아웃 레이어**
+    - 드롭아웃을 적용하여 과적합 방지
 
 ---
 
@@ -206,22 +181,21 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 1. **LSTM**
 
-성준님 베이스만 대충 써주실수 있을까용?!
+
 
 ### Dataset
-
 | Title | link |
 | --- | --- |
-| 한국어 혐오 데이터셋 | https://github.com/kocohub/korean-hate-speech |
-| 일베·오늘의 유머 사이트의 욕설 데이터셋 | https://github.com/2runo/Curse-detection-data |
+| 한국어 혐오 데이터셋 | <a href = https://github.com/kocohub/korean-hate-speech>korean-hate-speech</a> |
+| 일베·오늘의 유머 사이트의 욕설 데이터셋 | <a href = https://github.com/2runo/Curse-detection-data>Curse-detection-data></a>|
 | 디시인사이드·네이트판 등에서 수집한 욕설 데이터 | - |
-| 나무위키 한국어 욕설 정보 | https://namu.wiki/w/%EC%9A%95%EC%84%A4/%ED%95%9C%EA%B5%AD%EC%96%B4 |
+| 나무위키 한국어 욕설 정보 | <a href = https://namu.wiki/w/%EC%9A%95%EC%84%A4/%ED%95%9C%EA%B5%AD%EC%96%B4> 나무위키/욕설/한국어</a> |
 | 직접 제작한 불용어 사전 | - |
 
 ### Reference
 
 | Reference | Git | paper_link |
 | --- | --- | --- |
-| Swear Word Detection Method Using The Word Embedding and LSTM |  | https://oak.chosun.ac.kr/bitstream/2020.oak/16586/2/%EB%8B%A8%EC%96%B4%20%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B3%BC%20LSTM%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%B9%84%EC%86%8D%EC%96%B4%20%ED%8C%90%EB%B3%84%20%EB%B0%A9%EB%B2%95.pdf |
-| FastText:Library for efficient text classification and representation learning | https://github.com/facebookresearch/fastText | https://fasttext.cc/ |
-| The Unreasonable Effectiveness of Recurrent Neural Networks | https://github.com/karpathy/char-rnn | https://karpathy.github.io/2015/05/21/rnn-effectiveness/ |
+| Swear Word Detection Method Using The Word Embedding and LSTM |  | <a href = https://oak.chosun.ac.kr/bitstream/2020.oak/16586/2/%EB%8B%A8%EC%96%B4%20%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B3%BC%20LSTM%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%B9%84%EC%86%8D%EC%96%B4%20%ED%8C%90%EB%B3%84%20%EB%B0%A9%EB%B2%95.pdf>paper</a> |
+| FastText:Library for efficient text classification and representation learning | <a href = https://github.com/facebookresearch/fastText>FastText</a> | <a href = https://fasttext.cc/>paper</a> |
+| The Unreasonable Effectiveness of Recurrent Neural Networks | <a href = https://github.com/karpathy/char-rnn > char-rnn</a>| <a href= https://karpathy.github.io/2015/05/21/rnn-effectiveness/>paper</a>|
