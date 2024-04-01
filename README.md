@@ -54,7 +54,7 @@
 
 ![alt text](img/hate.png)
 
-<div style="text-align: center; font-size: 10px; font-style : italic; ">
+<div style="text-align: center; font-size: 10px; font-style: italic;">
 이강인(23·파리 생제르맹)에 대해 커뮤니티에 달린 비난 댓글</div>
 
 <br>
@@ -158,8 +158,10 @@
 
 **[성능 비교]  Accuracy / Loss** 
 
-![alt text](img/graph.png)
 
+<div style="display: flex; justify-content: center; text-align: center;">
+  <img src="img/graph.png" alt="Alt text" style="width: 80%; margin: 5px;">
+</div>
 ---
 
 ### 모델 설명
@@ -179,7 +181,7 @@ FastText를 사용한 이유는 다음과 같습니다.
 - 한국어는 조사 등의 불규칙한 형태소로 구성되어 있습니다. 특히 욕설 데이터는 띄어쓰기가 잘 지켜지지 않으며, 때에 따라 초성으로만 이루어진 비속어들이 존재합니다.
 - 비슷한 발음 등 어휘 정보를 가진 신조어의 특성에 따라, Word2Vec의 경우 단어가 모델에 없으면 이를 처리하기가 어렵습니다. 반면, FastText 모델은 하위 단어들을 이용하여, 모델에 없는 단어도 유사한 단어들의 정보를 활용하여 임베딩을 생성해 다양한 경우의 수를 고려함으로써 OOV(Out Of Vocabulary)문제를 효과적으로 해결할 수 있습니다.
 
-1. **LSTM**
+2. **LSTM**
 
 
 
