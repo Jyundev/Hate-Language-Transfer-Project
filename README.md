@@ -2,7 +2,7 @@
 
 </br></br>
 
-## 프로젝트 기간 📆
+## 📆 프로젝트 기간 
 
 | 날짜 | 업무 내용 |
 | --- | --- |
@@ -13,7 +13,7 @@
 
 </br></br>
 
-## 구성원
+## 🕺 구성원
 
 | 구성원 | 깃허브 주소 | 분담 역할 |
 | --- | --- | --- |
@@ -25,7 +25,7 @@
 
 ---
 
-## Stack
+## 🖥️ Stack
 
 - **Language** : Python
 - **Library & Framework** : Colab, Tensorflow, Fasttext, Sklearn, PyQt
@@ -41,18 +41,18 @@
 
 ## Contents Table
 
-- [프로젝트 개요](#📝-프로젝트-개요)
+- [프로젝트 개요](#📑-프로젝트-개요)
 - [기대 효과](#🛎️-기대-효과)
-- [프로젝트 설명](#프로젝트-설명)
-- [모델 설명](#모델-설명)
-- [Dataset](#dataset)
-- [Reference](#reference)
+- [프로젝트 설명](#✒️-프로젝트-설명)
+- [모델 설명](#✒️-모델-설명)
+- [Dataset](#📁-dataset)
+- [Reference](#📌-reference)
 
 ---
 
-## 📝 프로젝트 개요
+## 📑 프로젝트 개요
 
-<div style="display: flex; justify-content: center; text-align: center;">
+<div  align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/hate.png" alt="Alt text" style="width: 75%; margin: 5px;">
 </div>
 
@@ -80,10 +80,10 @@
         
 <br>
 
-## 프로젝트 설명
+## ✒️ 프로젝트 설명
 
 
-<div style="display: flex; justify-content: center; text-align: center;">
+<div align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/flow.png" alt="Alt text" style="width: 75%; margin: 5px;">
 </div>
 
@@ -95,7 +95,7 @@
 - 형태소 별 초성·중성·종성 분리
     - 댓글 일부분은 “ㅅㅂ”, “ㅄ” 등 초성으로만 이루어진 비속어가 존재합니다. 따라서, 단어가 아닌 자모단위로 분석하기 위해 한국어를 초성·중성·종성으로 분리하였습니다.
     
-<div style="display: flex; justify-content: center; text-align: center;">
+<div align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/data3.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
@@ -104,7 +104,7 @@
 - 한글의 형태적인 정보를 학습하여, n-gram(n=5) 단어 단위로 임베딩 할 수 있는 FastText모델 생성
 - 벡터화된 수치 데이터를 사용하여 비속어 여부를 학습하고 예측하기 위한 LSTM 모델을 수립
 
-<div style="display: flex; justify-content: center; text-align: center;">
+<div align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/model2.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
@@ -113,7 +113,7 @@
 - 성능 비교를 위해 LSTM 모델  두 가지와  GRU 모델을 사용했습니다.
 - LSTM 모델은 LSTM 레이어의 개수를 다르게 설정하여 두 가지 버전으로 분류하였습니다.
 
-<div style="display: flex; justify-content: center; text-align: center;">
+<div align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/graph.png" alt="Alt text" style="width: 60%; margin: 5px;">
 </div>
 
@@ -122,7 +122,7 @@
 
 PyQt GUI 프레임워크를 활용하여 사용자가 직접 분석을 수행할 수 있는 인터페이스를 구현했습니다.
 
-<div style="display: flex; justify-content: center; text-align: center;">
+<div align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/pyqt1.png" alt="Alt text" style="width: 40%; margin: 10px;">
   <img src="img/pyqt2.png" alt="Alt text" style="width: 40%; margin: 10px;">
 
@@ -130,12 +130,12 @@ PyQt GUI 프레임워크를 활용하여 사용자가 직접 분석을 수행할
 
 <br>
 
-## 모델 설명
+## ✒️ 모델 설명
 
 ### FastText
 
 FastText는 Facebook에서 개발한 기술로, 단어를 n-gram의 하위 단어 집합으로 학습하고, 이들을 결합하여 단어의 전체 임베딩을 생성합니다.
-<div style = "text-align: center;">
+<div align="center" style = "text-align: center;">
   <img src="img/fasetext.png" alt="Alt text" style="width: 60%; margin: 5px;">
 </div>
 
@@ -159,7 +159,7 @@ FastText를 사용한 이유는 다음과 같습니다.
 <br>
 
 
-## Dataset
+## 📁 Dataset
 | Title | link |
 | --- | --- |
 | 한국어 혐오 데이터셋 | <a href = https://github.com/kocohub/korean-hate-speech>korean-hate-speech</a> |
@@ -174,7 +174,7 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 <br>
 
-## Reference
+## 📌 Reference
 
 | Reference | Git | paper_link |
 | --- | --- | --- |
