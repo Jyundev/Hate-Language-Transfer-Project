@@ -101,8 +101,8 @@
 
 ### [모델 개발]
 
-- 한글의 형태적인 정보를 학습하여, n-gram(n=5) 단어 단위로 임베딩 할 수 있는 FastText모델 생성
-- 벡터화된 수치 데이터를 사용하여 비속어 여부를 학습하고 예측하기 위한 LSTM 모델을 수립
+- 한글의 형태적인 정보를 학습하여, n-gram(n=5) 단어 단위로 임베딩 할 수 있는 FastText모델 생성했습니다.
+- 벡터화된 수치 데이터를 사용하여 비속어 여부를 학습하고 예측하기 위한 LSTM 모델을 수립했습니다.
 
 <div align="center" style="display: flex; justify-content: center; text-align: center;">
   <img src="img/model2.png" alt="Alt text" style="width: 80%; margin: 5px;">
@@ -152,7 +152,7 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 순환신경망(RNN)의 한 종류로, 장기 의존성 문제를 해결하기 위해 고안되었습니다. 기존의 RNN은 긴 시퀀스 데이터에서 장기적인 의존성을 제대로 학습하지 못하는 문제가 있었습니다. LSTM의 경우 이 문제를 해결하기 위해 cell 상태와 게이트 메커니즘을 도입하여 장기 의존성을 학습할 수 있도록 설계되었습니다.
 
-<div style = "text-align: center;">
+<div  align="center"  style = "text-align: center;">
   <img src="img/LSTM.png" alt="Alt text" style="width: 50%; margin: 5px;">
 </div>
 
