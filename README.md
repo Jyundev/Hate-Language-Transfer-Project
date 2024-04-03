@@ -21,9 +21,9 @@
 | 구성준 | https://github.com/KOO-96 | 커뮤니티 게시글 및 댓글 데이터 <br>수집 및 데이터 라벨링, <br> LSTM 모델 구축 |
 | 장윤영 | https://github.com/Jyundev | 한국어 비속어  • 커뮤니티 게시글 및 댓글 데이터 <br>수집 및 데이터 라벨링,  <br> FastText 데이터 임베딩 |
 
-</br>
 
----
+</br></br>
+
 
 ## 🖥️ Stack
 
@@ -37,7 +37,9 @@
     | Local | i3-5005U | RTX-3070Ti | 4G | Window10 |
     | Colab | intel Xeon | T4 GPU | 12G | Ubuntu |
 
----
+
+</br></br>
+
 
 ## Contents Table
 
@@ -48,16 +50,18 @@
 - [Dataset](#📁-dataset)
 - [Reference](#📌-reference)
 
----
+
+</br></br>
+
 
 ## 📑 프로젝트 개요
 
-<div  align="center" style="display: flex; justify-content: center; text-align: center;">
+<div align="center">
   <img src="img/hate.png" alt="Alt text" style="width: 75%; margin: 5px;">
+  <p style="text-align: center; font-size: 10px; font-style: italic;">
+    이강인(23·파리 생제르맹)에 대해 커뮤니티에 달린 비난 댓글
+  </p>
 </div>
-
-<div style="text-align: center; font-size: 10px; font-style: italic;">
-이강인(23·파리 생제르맹)에 대해 커뮤니티에 달린 비난 댓글</div>
 
 <br>
 
@@ -65,7 +69,8 @@
 
 한국의 네티즌들은 댓글을 통해서 정보를 얻는 것보다는 주로 재미와 흥미를 추구한다는 조사 결과가 있습니다. (한국리서치, 2021) 이에 따라 본 프로젝트는 비속어를 탐지하여 순화된 언어로 변환하여 악플을 예방하고, 악플을 다는 행위 자체에 흥미를 잃게 만드는 것을 목적으로 합니다. 이를 통해 건전한 토론과 의견 교환이 가능한 환경을 조성하고자 합니다.
 
-<br>
+
+</br></br>
 
 ## 🛎️ 기대 효과
 
@@ -78,7 +83,9 @@
     > 악플을 다는 행위에 흥미를 잃게 만듦으로써, 악플러들이 부적절한 언어를 사용하는 것을 억제할 수 있습니다. 이를 통해, 온라인 공간의 사용자들이 더욱 건전하고 즐거운 경험을 할 수 있도록 도와줍니다
     > 
         
-<br>
+
+</br></br>
+
 
 ## ✒️ 프로젝트 설명
 
@@ -128,7 +135,9 @@ PyQt GUI 프레임워크를 활용하여 사용자가 직접 분석을 수행할
 
 </div>
 
-<br>
+
+</br></br>
+
 
 ## ✒️ 모델 설명
 
@@ -152,12 +161,31 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 순환신경망(RNN)의 한 종류로, 장기 의존성 문제를 해결하기 위해 고안되었습니다. 기존의 RNN은 긴 시퀀스 데이터에서 장기적인 의존성을 제대로 학습하지 못하는 문제가 있었습니다. LSTM의 경우 이 문제를 해결하기 위해 cell 상태와 게이트 메커니즘을 도입하여 장기 의존성을 학습할 수 있도록 설계되었습니다.
 
+
 <div  align="center"  style = "text-align: center;">
   <img src="img/LSTM.png" alt="Alt text" style="width: 50%; margin: 5px;">
 </div>
 
-<br>
+### LSTM의 구성 요소
 
+#### 1. cell state : LSTM의 핵심 메모리 유닛으로 정보가 전달되는 곳
+
+셀 상태는 기간이 지나면서 정보를 저장하거나 삭제를 할 수 있습니다.
+
+#### 2. Gates  : LSTM은 게이트 메커니즘을 통해 흐름을 제어합니다.
+
+- Forget gate(망각 게이트) : 과거 정보를 잊거나 기억하기 위한 결정을 하는 게이트
+
+- Input gate(입력 게이트) : Forget gate에서는 과거의 정보를 결정했다면 Input 게이트에서는 현재 정보를 잊거나 기억하기 위한 결정을 하는 게이트
+
+- Output gate(출력 게이트) : 현 시점의 Hidden state는 현 시점의 cell state와 함께 계산되며 출력과 동시에 다음 시점의 Hidden state로 넘깁니다.
+
+#### 3. Hidden State(은닉 상태) 
+ LSTM의 출력으로 사용되는 값으로, 현재의 입력과 이전 시간 단계의 은닉 상태에 의해 결정됩니다. 
+ 
+ 은닉 상태는 현재의 정보를 담고 있으며, 다음 상태의 단계로 전달 됩니다.
+
+</br></br>
 
 ## 📁 Dataset
 | Title | link |
@@ -168,11 +196,8 @@ FastText를 사용한 이유는 다음과 같습니다.
 | 나무위키 한국어 욕설 정보 | <a href = https://namu.wiki/w/%EC%9A%95%EC%84%A4/%ED%95%9C%EA%B5%AD%EC%96%B4> 나무위키/욕설/한국어</a> |
 | 직접 제작한 불용어 사전 | - |
 
-<br>
 
------
-
-<br>
+</br></br>
 
 ## 📌 Reference
 
