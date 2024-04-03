@@ -25,7 +25,7 @@
 
 ---
 
-## **Stack**
+## Stack
 
 - **Language** : Python
 - **Library & Framework** : Colab, Tensorflow, Fasttext, Sklearn, PyQt
@@ -39,7 +39,7 @@
 
 ---
 
-### Contents Table
+## Contents Table
 
 - [프로젝트 개요](#📝-프로젝트-개요)
 - [기대 효과](#🛎️-기대-효과)
@@ -50,9 +50,11 @@
 
 ---
 
-### 📝 프로젝트 개요
+## 📝 프로젝트 개요
 
-![alt text](img/hate.png)
+<div style="display: flex; justify-content: center; text-align: center;">
+  <img src="img/hate.png" alt="Alt text" style="width: 75%; margin: 5px;">
+</div>
 
 <div style="text-align: center; font-size: 10px; font-style: italic;">
 이강인(23·파리 생제르맹)에 대해 커뮤니티에 달린 비난 댓글</div>
@@ -63,9 +65,9 @@
 
 한국의 네티즌들은 댓글을 통해서 정보를 얻는 것보다는 주로 재미와 흥미를 추구한다는 조사 결과가 있습니다. (한국리서치, 2021) 이에 따라 본 프로젝트는 비속어를 탐지하여 순화된 언어로 변환하여 악플을 예방하고, 악플을 다는 행위 자체에 흥미를 잃게 만드는 것을 목적으로 합니다. 이를 통해 건전한 토론과 의견 교환이 가능한 환경을 조성하고자 합니다.
 
----
+<br>
 
-### 🛎️ 기대 효과
+## 🛎️ 기대 효과
 
 - 악플 방지
     
@@ -75,17 +77,17 @@
     
     > 악플을 다는 행위에 흥미를 잃게 만듦으로써, 악플러들이 부적절한 언어를 사용하는 것을 억제할 수 있습니다. 이를 통해, 온라인 공간의 사용자들이 더욱 건전하고 즐거운 경험을 할 수 있도록 도와줍니다
     > 
-    
-    ---
-    
-
-### 프로젝트 설명
+        
 <br>
 
-![alt text](img/flow.png)
+## 프로젝트 설명
 
 
-**[데이터 전처리]**
+<div style="display: flex; justify-content: center; text-align: center;">
+  <img src="img/flow.png" alt="Alt text" style="width: 75%; margin: 5px;">
+</div>
+
+### [데이터 전처리]
 
 - 데이터 별 욕설 여부 라벨링
 - 한글·공 외 영어 및 특수문자 제거
@@ -97,14 +99,7 @@
   <img src="img/data3.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
-<br>
-
--------
-
-<br>
-
-
-**[모델 개발]**
+### [모델 개발]
 
 - 한글의 형태적인 정보를 학습하여, n-gram(n=5) 단어 단위로 임베딩 할 수 있는 FastText모델 생성
 - 벡터화된 수치 데이터를 사용하여 비속어 여부를 학습하고 예측하기 위한 LSTM 모델을 수립
@@ -113,66 +108,35 @@
   <img src="img/model2.png" alt="Alt text" style="width: 80%; margin: 5px;">
 </div>
 
-<br>
+### [성능 비교]
 
------
-
-<br>
-
-**[모델 비교]**
-
-<br>
-
-**1. LSTM v1** 
-- **두 개의 LSTM 레이어**
-    - 첫 번째 LSTM 레이어: 입력 시퀀스를 받아들여 64차원의 출력 생성
-    - 두 번째 LSTM 레이어: 이전 LSTM 레이어의 출력을 받아들여 32차원의 출력 생성
-- **두 개의 Dense 레이어:**
-    - 첫 번째 Dense 레이어: 16차원의 출력 생성
-    - 두 번째 Dense 레이어: 단일 유닛의 출력 생성
-- **드롭아웃 레이어**
-    - 드롭아웃을 적용하여 과적합 방지
-
----
-
-**2. LSTM v2** 
-- **세 개의 LSTM 레이어**
-    - LSTM v1 모델과 비교하여 하나의 LSTM 레이어 추가
-
----
-
-**3. GRU (기존 LSTM 모델을 간소화한 버전)**
-- **세 개의 GRU 레이어**
-    - 첫 번째 GRU 레이어: 입력 시퀀스를 받아들여 64차원의 출력 생성
-    - 두 번째 GRU 레이어: 이전 GRU 레이어의 출력을 받아들여 32차원의 출력 생성
-    - 세 번째 GRU 레이어: 이전 GRU 레이어의 출력을 받아들여 16차원의 출력 생성
-- **두 개의 Dense 레이어:**
-    - 첫 번째 Dense 레이어: 16차원의 출력 생성
-    - 두 번째 Dense 레이어: 단일 유닛의 출력 생성
-- **드롭아웃 레이어**
-    - 드롭아웃을 적용하여 과적합 방지
-
----
-
-<br>
-
-**[성능 비교]  Accuracy / Loss** 
-
+- 성능 비교를 위해 LSTM 모델  두 가지와  GRU 모델을 사용했습니다.
+- LSTM 모델은 LSTM 레이어의 개수를 다르게 설정하여 두 가지 버전으로 분류하였습니다.
 
 <div style="display: flex; justify-content: center; text-align: center;">
-  <img src="img/graph.png" alt="Alt text" style="width: 80%; margin: 5px;">
+  <img src="img/graph.png" alt="Alt text" style="width: 60%; margin: 5px;">
 </div>
 
----
 
-### 모델 설명
+### [실행 결과]
 
+PyQt GUI 프레임워크를 활용하여 사용자가 직접 분석을 수행할 수 있는 인터페이스를 구현했습니다.
 
-1. **FastText**
+<div style="display: flex; justify-content: center; text-align: center;">
+  <img src="img/pyqt1.png" alt="Alt text" style="width: 40%; margin: 10px;">
+  <img src="img/pyqt2.png" alt="Alt text" style="width: 40%; margin: 10px;">
+
+</div>
+
+<br>
+
+## 모델 설명
+
+### FastText
 
 FastText는 Facebook에서 개발한 기술로, 단어를 n-gram의 하위 단어 집합으로 학습하고, 이들을 결합하여 단어의 전체 임베딩을 생성합니다.
 <div style = "text-align: center;">
-  <img src="img/fasetext.png" alt="Alt text" style="width: 80%; margin: 5px;">
+  <img src="img/fasetext.png" alt="Alt text" style="width: 60%; margin: 5px;">
 </div>
 
 <br>
@@ -184,11 +148,18 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 <br>
 
-2. **LSTM**
+### **LSTM (Long short-Term Memory)**
+
+순환신경망(RNN)의 한 종류로, 장기 의존성 문제를 해결하기 위해 고안되었습니다. 기존의 RNN은 긴 시퀀스 데이터에서 장기적인 의존성을 제대로 학습하지 못하는 문제가 있었습니다. LSTM의 경우 이 문제를 해결하기 위해 cell 상태와 게이트 메커니즘을 도입하여 장기 의존성을 학습할 수 있도록 설계되었습니다.
+
+<div style = "text-align: center;">
+  <img src="img/LSTM.png" alt="Alt text" style="width: 50%; margin: 5px;">
+</div>
+
+<br>
 
 
-
-### Dataset
+## Dataset
 | Title | link |
 | --- | --- |
 | 한국어 혐오 데이터셋 | <a href = https://github.com/kocohub/korean-hate-speech>korean-hate-speech</a> |
@@ -197,7 +168,13 @@ FastText를 사용한 이유는 다음과 같습니다.
 | 나무위키 한국어 욕설 정보 | <a href = https://namu.wiki/w/%EC%9A%95%EC%84%A4/%ED%95%9C%EA%B5%AD%EC%96%B4> 나무위키/욕설/한국어</a> |
 | 직접 제작한 불용어 사전 | - |
 
-### Reference
+<br>
+
+-----
+
+<br>
+
+## Reference
 
 | Reference | Git | paper_link |
 | --- | --- | --- |
