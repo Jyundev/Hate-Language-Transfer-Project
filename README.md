@@ -43,18 +43,18 @@
 
 ## Contents Table
 
-- [프로젝트 개요](#📑-프로젝트-개요)
-- [기대 효과](#🛎️-기대-효과)
-- [프로젝트 설명](#✒️-프로젝트-설명)
-- [모델 설명](#✒️-모델-설명)
-- [Dataset](#📁-dataset)
-- [Reference](#📌-reference)
+- [프로젝트 개요](#프로젝트-개요)
+- [기대 효과](#기대-효과)
+- [프로젝트 설명](#프로젝트-설명)
+- [모델 설명](#모델-설명)
+- [Dataset](#dataset)
+- [Reference](#reference)
 
 
 </br></br>
 
 
-## 📑 프로젝트 개요
+## 프로젝트 개요
 
 <div align="center">
   <img src="img/hate.png" alt="Alt text" style="width: 75%; margin: 5px;">
@@ -72,7 +72,7 @@
 
 </br></br>
 
-## 🛎️ 기대 효과
+## 기대 효과
 
 - 악플 방지
     
@@ -87,7 +87,7 @@
 </br></br>
 
 
-## ✒️ 프로젝트 설명
+## 프로젝트 설명
 
 
 <div align="center" style="display: flex; justify-content: center; text-align: center;">
@@ -187,7 +187,7 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 </br></br>
 
-## 📁 Dataset
+## Dataset
 | Title | link |
 | --- | --- |
 | 한국어 혐오 데이터셋 | <a href = https://github.com/kocohub/korean-hate-speech>korean-hate-speech</a> |
@@ -199,7 +199,7 @@ FastText를 사용한 이유는 다음과 같습니다.
 
 </br></br>
 
-## 📌 Reference
+## Reference
 
 | Reference | Git | paper_link |
 | --- | --- | --- |
